@@ -1,15 +1,15 @@
-/var/const/meteor_wave_delay = 625 //minimum wait between waves in tenths of seconds
+/var/const/meteor_wave_delay = 1200 //minimum wait between waves in tenths of seconds
 //set to at least 100 unless you want evarr ruining every round
 
 //Meteors probability of spawning during a given wave
-/var/list/meteors_normal = list(/obj/effect/meteor/dust=3, /obj/effect/meteor/medium=8, /obj/effect/meteor/big=3, \
-						  /obj/effect/meteor/flaming=1, /obj/effect/meteor/irradiated=3) //for normal meteor event
+/var/list/meteors_normal = list(/obj/effect/meteor/dust=3, /obj/effect/meteor/medium=6, /obj/effect/meteor/big=1, \
+						  /obj/effect/meteor/flaming=0, /obj/effect/meteor/irradiated=1) //for normal meteor event
 
-/var/list/meteors_threatening = list(/obj/effect/meteor/medium=4, /obj/effect/meteor/big=8, \
+/var/list/meteors_threatening = list(/obj/effect/meteor/medium=2, /obj/effect/meteor/big=6, \
 						  /obj/effect/meteor/flaming=3, /obj/effect/meteor/irradiated=3) //for threatening meteor event
 
-/var/list/meteors_catastrophic = list(/obj/effect/meteor/medium=5, /obj/effect/meteor/big=75, \
-						  /obj/effect/meteor/flaming=10, /obj/effect/meteor/irradiated=10, /obj/effect/meteor/tunguska = 1) //for catastrophic meteor event
+/var/list/meteors_catastrophic = list(/obj/effect/meteor/medium=60, /obj/effect/meteor/big=50, \
+						  /obj/effect/meteor/flaming=5, /obj/effect/meteor/irradiated=5, /obj/effect/meteor/tunguska = 1) //for catastrophic meteor event
 
 /var/list/meteorsB = list(/obj/effect/meteor/meaty=5, /obj/effect/meteor/meaty/xeno=1) //for meaty ore event
 
@@ -20,14 +20,14 @@
 //Meteor spawning global procs
 ///////////////////////////////
 
-/proc/spawn_meteors(number = 10, list/meteortypes)
+/proc/spawn_meteors(number = 8, list/meteortypes)
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
 /proc/spawn_meteor(list/meteortypes)
 	var/turf/pickedstart
 	var/turf/pickedgoal
-	var/max_i = 10//number of tries to spawn meteor.
+	var/max_i = 8//number of tries to spawn meteor.
 	while (!istype(pickedstart, /turf/space))
 		var/startSide = pick(cardinal)
 		pickedstart = spaceDebrisStartLoc(startSide, 1)

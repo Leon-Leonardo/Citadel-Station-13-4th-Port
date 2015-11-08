@@ -1,8 +1,8 @@
 /datum/game_mode/extended
 	name = "extended"
 	config_tag = "extended"
-	required_players = 0
-	//reroll_friendly = 1
+	required_players = 1
+	reroll_friendly = 1
 
 /datum/game_mode/announce()
 	world << "<B>The current game mode is - Extended Role-Playing!</B>"

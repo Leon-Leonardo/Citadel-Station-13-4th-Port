@@ -5,9 +5,9 @@
 /datum/game_mode/nuclear
 	name = "nuclear emergency"
 	config_tag = "nuclear"
-	required_players = 20 // 20 players - 5 players to be the nuke ops = 15 players remaining
-	required_enemies = 5
-	recommended_enemies = 5
+	required_players = 15 // 15 players - 1 players to be the nuke ops = 14 players remaining
+	required_enemies = 1
+	recommended_enemies = 4
 	antag_flag = BE_OPERATIVE
 	enemy_minimum_age = 14
 
@@ -313,7 +313,7 @@
 	U.hidden_uplink.uses = tc
 	U.hidden_uplink.mode_override = /datum/game_mode/nuclear //Goodies
 	H.equip_to_slot_or_del(U, slot_in_backpack)
-	
+
 	var/obj/item/weapon/implant/weapons_auth/W = new/obj/item/weapon/implant/weapons_auth(H)
 	W.implant(H)
 	var/obj/item/weapon/implant/explosive/E = new/obj/item/weapon/implant/explosive(H)
@@ -329,7 +329,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi
 	l_pocket = /obj/item/weapon/tank/internals/emergency_oxygen/engi
 	r_pocket = /obj/item/weapon/gun/projectile/automatic/pistol
-	belt = /obj/item/weapon/storage/belt/military 
+	belt = /obj/item/weapon/storage/belt/military
 	r_hand = /obj/item/weapon/gun/projectile/automatic/shotgun/bulldog
 	backpack_contents = list(/obj/item/weapon/storage/box/engineer=1,\
 		/obj/item/weapon/tank/jetpack/oxygen/harness=1,\
@@ -340,7 +340,7 @@
 /datum/outfit/syndicate/full/post_equip(mob/living/carbon/human/H)
 	..()
 
-	
+
 	var/obj/item/clothing/suit/space/hardsuit/syndi/suit = H.wear_suit
 	suit.ToggleHelmet()
 	var/obj/item/clothing/head/helmet/space/hardsuit/syndi/helmet = H.head

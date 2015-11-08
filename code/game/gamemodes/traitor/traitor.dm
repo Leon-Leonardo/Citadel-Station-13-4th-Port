@@ -12,7 +12,7 @@
 	antag_flag = BE_TRAITOR
 	restricted_jobs = list("Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel")//They are part of the AI if he is traitor so are they, they use to get double chances
 	protected_jobs = list()//AI", Currently out of the list as malf does not work for shit
-	required_players = 0
+	required_players = 10
 	required_enemies = 1
 	recommended_enemies = 4
 	reroll_friendly = 1

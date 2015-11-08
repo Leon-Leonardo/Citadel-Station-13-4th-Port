@@ -56,7 +56,7 @@
 	protected_jobs = list()
 	required_players = 20
 	required_enemies = 4
-	recommended_enemies = 4
+	recommended_enemies = 5
 	enemy_minimum_age = 14
 
 
